@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP Basics Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #555;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+        pre {
+            background: #e9e9e9;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .output {
+            background-color: #dff0d8;
+            border: 1px solid #d6e9c6;
+            color: #3c763d;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PHP Basics Practice</h1>
+        <p>This page demonstrates key PHP concepts from your course material. Uncomment sections in the code to see different examples in action.</p>
+        
+        <?php
+        echo "<h2>1. PHP Syntax and Output</h2>";
+        echo "<h3>Hello from PHP!</h3>";
+
+        echo "<h2>2. Variables, Data Types, and Operators</h2>";
+
+        $string = "Hello World!";
+        $integer = 123;
+        $float = 12.34;
+        $boolean = true;
+        $null = NULL;
+        $array = ["Apple", "Banana", "Cherry"];
+
+        echo "<h3>Variables and Data Types</h3>";
+        echo "<p>String: $string</p>";
+        echo "<p>Integer: $integer</p>";
+        echo "<p>Float: $float</p>";
+        echo "<p>Boolean: " . ($boolean ? 'true' : 'false') . "</p>";
+        echo "<p>NULL: " . ($null === NULL ? 'NULL' : 'Not NULL') . "</p>";
+        echo "<p>Array: " . $array[0] . ", " . $array[1] . ", " . $array[2] . "</p>";
+
+        echo "<h3>Operators</h3>";
+        $a = 10;
+        $b = 5;
+
+        $sum = $a + $b;
+        $product = $a * $b;
+        echo "<p>10 + 5 = $sum</p>";
+        echo "<p>10 * 5 = $product</p>";
+
+        echo "<p>10 is greater than 5: " . ($a > $b ? 'true' : 'false') . "</p>";
+
+        // Logical Operator
+        $is_true = ($a > 0 && $b < 10);
+        echo "<p>(10 > 0 AND 5 < 10): " . ($is_true ? 'true' : 'false') . "</p>";
+
+
+        // Section 3: Control Structures
+        echo "<h2>3. Control Structures</h2>";
+        $age = 20;
+
+        // If/Else Statement
+        echo "<h3>if/else Statement</h3>";
+        if ($age >= 18) {
+            echo "<p>You are an adult.</p>";
+        } else {
+            echo "<p>You are a minor.</p>";
+        }
+
+        // Switch Statement
+        echo "<h3>switch Statement</h3>";
+        $day = "Wednesday";
+        switch ($day) {
+            case "Monday":
+                echo "<p>It's the start of the week.</p>";
+                break;
+            case "Friday":
+                echo "<p>It's almost the weekend!</p>";
+                break;
+            default:
+                echo "<p>It's just another day.</p>";
+        }
+
+        // Section 4: Loop Structures
+        echo "<h2>4. Loop Structures</h2>";
+
+        // For Loop
+        echo "<h3>for Loop</h3>";
+        for ($i = 0; $i < 3; $i++) {
+            echo "<p>The value of i is: $i</p>";
+        }
+
+        // While Loop
+        echo "<h3>while Loop</h3>";
+        $j = 0;
+        while ($j < 3) {
+            echo "<p>The value of j is: $j</p>";
+            $j++;
+        }
+
+        // Do-while Loop
+        echo "<h3>do-while Loop</h3>";
+        $k = 0;
+        do {
+            echo "<p>The value of k is: $k</p>";
+            $k++;
+        } while ($k < 3);
+
+        // Foreach Loop
+        echo "<h3>foreach Loop</h3>";
+        $colors = ["Red", "Green", "Blue"];
+        foreach ($colors as $color) {
+            echo "<p>I like the color $color.</p>";
+        }
+
+        // Section 5: Functions and Arrays
+        echo "<h2>5. Functions and Arrays</h2>";
+
+        // Functions
+        function greet($name) {
+            return "Hello, " . htmlspecialchars($name) . "!";
+        }
+        echo "<h3>Functions</h3>";
+        echo "<p>" . greet("Dangal") . "</p>";
+
+        // Indexed Array
+        echo "<h3>Indexed Arrays</h3>";
+        $fruits = ["Apple", "Banana", "Cherry"];
+        echo "<p>The first fruit is: " . $fruits[0] . "</p>";
+        echo "<p>The number of fruits is: " . count($fruits) . "</p>";
+
+        // Associative Array
+        echo "<h3>Associative Arrays</h3>";
+        $person = ["Name" => "Mang Tomas", "Age" => 25];
+        echo "<p>" . $person["Name"] . " is " . $person["Age"] . " years old.</p>";
+        ?>
+    </div>
+</body>
+</html>

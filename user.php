@@ -7,8 +7,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $search = $conn->real_escape_string($_POST["search"]);
     $sql = "SELECT * FROM books 
             WHERE title LIKE '%$search%' 
-               OR author LIKE '%$search%' 
-               OR isbn LIKE '%$search%'";
+            OR author LIKE '%$search%' 
+            OR isbn LIKE '%$search%'";
     $results = $conn->query($sql);
 }
 ?>
@@ -18,6 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Search Books</title>
 </head>
 <body>
+    <a href="button.php"><button>Button 1</button></a>
+    <a href="button.php"><button>Button 2</button></a>
+    <a href="borrow.php"><button>Borrow Books</button></a>
+    <a href="login.php?logout=1"><button>Logout</button></a>
+
     <h2>Search a Book</h2>
     <form method="post">
         <input type="text" name="search" placeholder="Enter title, author, or ISBN" required>

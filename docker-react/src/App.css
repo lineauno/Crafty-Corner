@@ -1,0 +1,141 @@
+/* GLOBAL STYLES & BACKGROUND */
+body {
+  margin: 0;
+  padding: 0;
+  /* Soft gradient background */
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #2c3e50; /* Darker text for contrast */
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* APP CONTAINER */
+.App {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* PROFILE CARD STYLES */
+.profile-card {
+  width: 90%;
+  max-width: 720px; /* Slightly wider card */
+  margin: 40px auto;
+  padding: 40px; /* More padding */
+  background-color: #ffffff;
+  border-radius: 16px; /* More pronounced rounded corners */
+  /* Enhanced shadow for depth and lift */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.profile-card:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+}
+
+/* HEADINGS AND TEXT */
+h1 {
+  color: #1a202c; /* Very dark heading */
+  font-size: 2.8em; /* Larger name */
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  color: #2d3748; /* Slightly lighter sub-heading */
+  font-size: 1.6em;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  position: relative;
+  display: inline-block; /* Allows border-bottom to fit text */
+}
+
+h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px; /* Position the line below the text */
+  height: 3px;
+  background-color: #4299e1; /* Accent color for the line */
+  border-radius: 2px;
+}
+
+p {
+  color: #4a5568; /* Muted but readable paragraph text */
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+
+/* DIVIDER LINE (Main Card Divider) */
+hr {
+  border: none;
+  border-top: 1px dashed #cbd5e0; /* Dashed line for a softer look */
+  margin: 35px 0;
+}
+
+/* SKILLS SECTION - GENERAL */
+.skills-container {
+    padding: 20px 0;
+}
+
+.skills-section h3 {
+  margin-bottom: 25px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Space between skill items */
+}
+
+.skills-list li {
+  padding: 10px 20px;
+  border-radius: 25px; /* More pill-shaped */
+  font-weight: 600;
+  font-size: 0.95em;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  cursor: default;
+}
+
+.skills-list li:hover {
+  transform: translateY(-3px); /* Lift skill on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* SKILL DIVIDER (Inside Skills.js) */
+.skill-divider {
+    border: none;
+    border-top: 1px dotted #a0aec0; /* A soft dotted line */
+    width: 60%;
+    margin: 30px auto;
+}
+
+/* SPECIFIC STYLING FOR TECHNICAL SKILLS */
+.technical-skills li {
+  background-color: #e2f8f5; /* Light teal */
+  color: #0c745f; /* Darker teal text */
+  border: 1px solid #48bb78; /* Green border */
+}
+
+/* SPECIFIC STYLING FOR SOFT SKILLS */
+.soft-skills li {
+  background-color: #e0f2fe; /* Light blue */
+  color: #2b6cb0; /* Darker blue text */
+  border: 1px solid #63b3ed; /* Blue border */
+}
+
+/* FOOTER TEXT */
+.App > p { /* Target the direct p child of .App */
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #718096;
+}

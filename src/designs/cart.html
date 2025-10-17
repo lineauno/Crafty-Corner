@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart - Crafty Corner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <h1 class="logo">Crafty Corner</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="cart.html" class="active">Cart <span class="cart-count">1</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cart-container">
+    <h2>Lorem Ipsum Shopping Cart</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Subtotal</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="item">
+            <div class="item-box"></div>
+            <span>Lorem ipsum</span>
+          </td>
+          <td class="quantity">
+            <button>-</button>
+            <span>1</span>
+            <button>+</button>
+          </td>
+          <td>₱199</td>
+          <td class="subtotal">₱199</td>
+          <td><span class="remove">X</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="total-section">
+      <span>Lorem Total:</span>
+      <strong>₱199</strong>
+    </div>
+
+    <div class="cart-buttons">
+      <a href="products.html" class="btn-light">Continue Shopping</a>
+      <a href="#" class="btn-green">Checkout</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>Lorem ipsum dolor sit amet © 2025 Crafty Corner. All rights reserved.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+  </footer>
+</body>
+</html>

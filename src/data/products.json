@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Premium Notebook",
+    "price": 149.00,
+    "image": "/images/notebook.jpg",
+    "description": "A high-quality spiral notebook with 200 lined pages, perfect for school or office use."
+  },
+  {
+    "id": 2,
+    "name": "Ballpoint Pen Set",
+    "price": 89.00,
+    "image": "/images/pen-set.jpg",
+    "description": "Smooth-writing ballpoint pens with black, blue, and red ink colors."
+  },
+  {
+    "id": 3,
+    "name": "Desk Organizer",
+    "price": 249.00,
+    "image": "/images/desk-organizer.jpg",
+    "description": "Keep your workspace tidy with this 4-compartment wooden desk organizer."
+  },
+  {
+    "id": 4,
+    "name": "Sticky Note Pads",
+    "price": 59.00,
+    "image": "/images/sticky-notes.jpg",
+    "description": "Brightly colored sticky notes for reminders and quick notes."
+  },
+  {
+    "id": 5,
+    "name": "Correction Tape",
+    "price": 45.00,
+    "image": "/images/correction-tape.jpg",
+    "description": "Smooth and precise correction tape with ergonomic design."
+  }
+]

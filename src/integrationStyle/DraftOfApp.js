@@ -2,8 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css';
 
-import Login from './Login'; 
-
 import vintageWashiTapeImg from './integrationStyle/images/vintage-washi-tape.png';
 import pastelAcrylicPaintsImg from './integrationStyle/images/pastel-acrylic-paints.png';
 import a3CuttingMatImg from './integrationStyle/images/a3-cutting-mat.png';
@@ -100,38 +98,7 @@ const saveCartToStorage = (cart) => {
     localStorage.setItem('cart', JSON.stringify(cart));
 };
 
-
-const AdminDashboard = ({ onLogout }) => (
-    <div className="admin-dashboard-container">
-        <div className="admin-dashboard-box">
-            
-            <h2 className="admin-dashboard-title">Admin Dashboard</h2>
-            
-            <p className="admin-welcome-text">
-                Welcome, Administrator. Manage your e-commerce operations efficiently.
-            </p>
-
-            {/* Action Buttons */}
-            <div className="admin-action-buttons">
-                
-                <button className="admin-primary-btn">
-                    Manage Products
-                </button>
-                
-                <button className="admin-secondary-btn">
-                    View Orders
-                </button>
-                
-                <button onClick={onLogout} className="admin-logout-btn">
-                    Logout
-                </button>
-            </div>
-        </div>
-    </div>
-);
-
-
-const Navbar = ({ navigate, currentPage, cartItemCount, onLogout, userRole }) => {
+const Navbar = ({ navigate, currentPage, cartItemCount }) => {
     
     const [localCartCount, setLocalCartCount] = useState(cartItemCount);
 
@@ -141,13 +108,10 @@ const Navbar = ({ navigate, currentPage, cartItemCount, onLogout, userRole }) =>
         setLocalCartCount(count);
     }, [cartItemCount]);
 
-    let navItems = [];
-    if (userRole === 'user') {
-        navItems = [
-            { name: 'Home', page: 'home' },
-            { name: 'Products', page: 'products' },
-        ];
-    }
+    const navItems = [
+        { name: 'Home', page: 'home' },
+        { name: 'Products', page: 'products' },
+    ];
 
     return (
         <header className="navbar">
@@ -155,7 +119,7 @@ const Navbar = ({ navigate, currentPage, cartItemCount, onLogout, userRole }) =>
             
             <nav>
                 <ul>
-                    {userRole === 'user' && navItems.map((item) => (
+                    {navItems.map((item) => (
                         <button
                             key={item.page}
                             onClick={() => navigate(item.page)}
@@ -165,23 +129,17 @@ const Navbar = ({ navigate, currentPage, cartItemCount, onLogout, userRole }) =>
                         </button>
                     ))}
 
-                    {userRole === 'user' && (
-                        <button
-                            onClick={() => navigate('cart')}
-                            className="cart-link"
-                            aria-label="View Shopping Cart"
-                        >
-                            <span className="font-semibold">Cart</span>
-                            {localCartCount > 0 && (
-                                <span className="cart-count-badge">
-                                    {localCartCount}
-                                </span>
-                            )}
-                        </button>
-                    )}
-
-                    <button onClick={onLogout} className="nav-link logout-link">
-                        Logout
+                    <button
+                        onClick={() => navigate('cart')}
+                        className="cart-link"
+                        aria-label="View Shopping Cart"
+                    >
+                        <span className="font-semibold">Cart</span>
+                        {localCartCount > 0 && (
+                            <span className="cart-count-badge">
+                                {localCartCount}
+                            </span>
+                        )}
                     </button>
                 </ul>
             </nav>
@@ -420,8 +378,8 @@ const CartPage = ({ navigate, updateItem, getCartItems }) => {
     );
 
     return (
-        <div className="checkout-page-container"> 
-            <h2 
+        <div className="checkout-page-container"> 
+            <h2 
                 className="cart-title-brand"
             >
                 Your Shopping Cart
@@ -514,7 +472,7 @@ const CheckoutPage = ({ navigate, clearCart, getCartItems }) => {
 
     return (
         <div className="checkout-page-container">
-            <h1 className={`text-4xl font-bold ${BRAND_PINK_TEXT} mb-8 text-center`}>Secure Checkout</h1>
+            <h2 className={`text-4xl font-bold ${BRAND_PINK_TEXT} mb-8 text-center`}>Secure Checkout</h2>
             
             <div className="checkout-grid">
 
@@ -530,9 +488,10 @@ const CheckoutPage = ({ navigate, clearCart, getCartItems }) => {
                         <input type="email" placeholder="Email Address" required className="checkout-input" />
                     </div>
                     <div className="form-field-wrapper">
-                        <input type="text" placeholder="Address Line 1" required className="checkout-input" />
+                       <input type="text" placeholder="Address Line 1" required className="checkout-input" />
 
-                    </div> 
+                    </div>                    
+                    {}
                     <div className="form-field-wrapper"> 
                         <input type="text" placeholder="City" required className="checkout-input" />
                     </div>
@@ -588,8 +547,6 @@ const Footer = () => (
 
 
 const App = () => {
-   
-    const [userRole, setUserRole] = useState(localStorage.getItem('userRole') || null); 
     const [currentPage, setCurrentPage] = useState('home');
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [cartItems, setCartItems] = useState(getCartFromStorage);
@@ -599,28 +556,7 @@ const App = () => {
         saveCartToStorage(cartItems);
     }, [cartItems]);
 
-    useEffect(() => {
-        if (userRole) {
-            localStorage.setItem('userRole', userRole);
-            setCurrentPage(userRole === 'user' ? 'home' : 'adminDashboard'); 
-        } else {
-            localStorage.removeItem('userRole');
-        }
-    }, [userRole]);
-
-
-    const handleLogin = (role) => {
-        setUserRole(role);
-    };
-
-    const handleLogout = () => {
-        setUserRole(null);
-        clearCart(); 
-        setCurrentPage('home'); 
-    };
-
     const navigate = (page, product = null) => {
-        if (userRole === 'admin' && page !== 'adminDashboard') return; 
         setCurrentPage(page);
         setSelectedProduct(product);
         window.scrollTo(0, 0);
@@ -655,15 +591,6 @@ const App = () => {
     const cartItemCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     const renderPage = () => {
-        if (!userRole) {
-            return <Login onLogin={handleLogin} />;
-        }
-
-        if (userRole === 'admin') {
-            return <AdminDashboard onLogout={handleLogout} />;
-        }
-
-        // USER PAGES
         switch (currentPage) {
             case 'home':
                 return <HomePage navigate={navigate} />;
@@ -683,17 +610,13 @@ const App = () => {
 
     return (
         <> 
-            {userRole && (userRole === 'user' ? (
-                <Navbar navigate={navigate} currentPage={currentPage} cartItemCount={cartItemCount} onLogout={handleLogout} userRole={userRole} />
-            ) : (
-                <header className="navbar"></header> 
-            ))}
+            <Navbar navigate={navigate} currentPage={currentPage} cartItemCount={cartItemCount} />
 
             <main className="flex-grow max-w-full">
                 {renderPage()}
             </main>
 
-            {userRole && <Footer />}
+            <Footer />
         </>
     );
 }

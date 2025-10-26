@@ -89,12 +89,11 @@ body {
 }
 
 .products-page {
-    max-width: none;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 2rem;
     min-height: 80vh;
     text-align: center;
-    background-color: #fdfaf1;
 }
 
 .products-page h2 {
@@ -227,7 +226,6 @@ body {
 .featured-products-container {
     padding: 4rem 1rem;
     text-align: center;
-    background-color: #fdfaf1;
 }
 
 .featured-grid {
@@ -316,7 +314,7 @@ body {
 
 .secondary-btn {
     flex: 1;
-    padding: 1rem 3rem;
+    padding: 1rem 5rem;
     font-size: 1.125rem;
     font-weight: 600;
     color: #ff8ba7;
@@ -481,7 +479,7 @@ button, input, select, textarea {
 
 .primary-add-to-cart-btn {
     flex: 1;
-    padding: 1rem 3rem;
+    padding: 1rem 5rem;
     font-size: 1.125rem;
     font-weight: 600;
     text-align: center;
@@ -595,16 +593,8 @@ button, input, select, textarea {
 
 .checkout-page-container {
     padding: 2rem 1rem;
-    max-width: none;
+    max-width: 80rem;
     margin: 0 auto;
-    background-color: #fdfaf1;
-}
-
-.checkout-page-container h1 {
-    color: #ff8ba7;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding-left: 6rem;
 }
 
 .checkout-grid {
@@ -768,138 +758,6 @@ button, input, select, textarea {
     color: #ff8ba7;
     font-size: 2rem; 
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-/* ==================================== */
-/* ➡️ ADMIN DASHBOARD STYLES */
-/* ==================================== */
-
-.admin-dashboard-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 85vh; /* Takes up most of the viewport height */
-    background-color: #fdfaf1; /* Your 'dirty white' body background */
-    padding: 2rem 1rem;
-}
-
-.admin-dashboard-box {
-    max-width: 50rem; /* Wide but still centered */
-    width: 100%;
-    padding: 2rem;
-    background-color: #ffffff; /* White background for the main content box */
-    border-radius: 0.75rem; /* Rounded corners */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Soft shadow */
-    text-align: center;
-}
-
-.admin-dashboard-title {
-    font-size: 2.5rem; /* 4xl or 5xl equivalent */
-    font-weight: 800; /* Extra bold */
     margin-bottom: 0.5rem;
-    color: #ff8ba7; /* Brand Pink */
-}
-
-.admin-welcome-text {
-    font-size: 1.125rem; /* lg equivalent */
-    color: #6b7280; /* Gray-500/600 */
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #e5e7eb; /* Light border separator */
-}
-
-/* --- Metric Cards --- */
-
-.admin-metric-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2.5rem;
-}
-
-.admin-metric-card {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    text-align: left;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.admin-metric-new-orders {
-    background-color: #e0f2f7; /* Light Blue */
-    border-left: 4px solid #00bfff;
-}
-.admin-metric-low-stock {
-    background-color: #fef9e7; /* Light Yellow */
-    border-left: 4px solid #f9d71c;
-}
-.admin-metric-revenue {
-    background-color: #e6f7ef; /* Light Green */
-    border-left: 4px solid #5cb85c;
-}
-
-.metric-value {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #333;
-}
-
-.metric-label {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-/* --- Action Buttons --- */
-
-.admin-action-buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem; /* Space between buttons */
-}
-
-@media (min-width: 640px) { /* Tailwind sm breakpoint */
-    .admin-action-buttons {
-        flex-direction: row;
-        gap: 1rem;
-    }
-}
-
-.admin-primary-btn, 
-.admin-secondary-btn, 
-.admin-logout-btn {
-    font-weight: 700;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px; /* rounded-full equivalent */
-    transition: all 0.3s ease;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    flex-grow: 1;
     text-align: center;
-    max-width: 250px;
-    margin: 0 auto;
-}
-
-@media (min-width: 640px) {
-    .admin-primary-btn, 
-    .admin-secondary-btn, 
-    .admin-logout-btn {
-        flex-grow: 0;
-    }
-}
-
-.admin-primary-btn {
-    background-color: #ff8ba7; 
-    color: white;
-}
-
-.admin-secondary-btn {
-    background-color: #ff8ba7; 
-    color: white;
-}
-
-.admin-logout-btn {
-    background-color: #ff8ba7; 
-    color: white;
 }

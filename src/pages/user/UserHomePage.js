@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../pagesComponents/Navbar";
 import Footer from "../pagesComponents/Footer";
@@ -8,6 +8,21 @@ import "../../styles/UserHomePage.css";
 function UserHomePage({ onLogout }) {
     const navigate = useNavigate();
     const [cartItemCount, setCartItemCount] = useState(0);
+
+    // Load cart count from localStorage
+    useEffect(() => {
+        const updateCartCount = () => {
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const count = cart.reduce((acc, item) => acc + item.quantity, 0);
+            setCartItemCount(count);
+        };
+
+        updateCartCount();
+
+        // Optional: listen to storage events if cart is updated in another tab
+        window.addEventListener("storage", updateCartCount);
+        return () => window.removeEventListener("storage", updateCartCount);
+    }, []);
 
     const handleNavigate = (page) => {
         if (page === "home") navigate("/user");
@@ -55,17 +70,12 @@ function UserHomePage({ onLogout }) {
                             className="product-card"
                             onClick={() => navigate(`/user/products/${product.id}`)}
                         >
-                            {/* ✅ Product Image */}
                             <img
                                 className="product-img"
                                 src={product.imageUrl}
                                 alt={product.name}
                             />
-
-                            {/* ✅ Optional "New" badge */}
                             <span className="new-badge">New</span>
-
-                            {/* ✅ Product Name */}
                             <p className="product-name">{product.name}</p>
                         </div>
                     ))}

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+    * {
+    font-family: 'Quicksand', sans-serif;
+    box-sizing: border-box;
+    }
+    
+    html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe1e8; /* Full pink background */
+    }
+
+    /* Background container */
+    .login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe1e8;
+    }
+
+    /* Login box */
+    .login-form {
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+    }
+
+    /* Heading */
+    .login-form h2 {
+    color: #ff8ba7;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    }
+
+    /* Inputs */
+    .login-form input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 1rem;
+    }
+
+    .login-form input:focus {
+    border-color: #ff8ba7;
+    box-shadow: 0 0 5px rgba(255, 139, 167, 0.3);
+    }
+
+    /* Button */
+    .login-form button {
+    background-color: #ff8ba7;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 100%;
+    }
+
+    .login-form button:hover {
+    opacity: 0.9;
+    }
+
+    /* Error text */
+    .error-message {
+    color: red;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    }

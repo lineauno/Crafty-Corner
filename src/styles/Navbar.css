@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+    body {
+    font-family: 'Quicksand', sans-serif !important;
+    }
+
+    .navbar {
+    background-color: #ffe1e8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    }
+
+    .brand {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #ff8ba7;
+    cursor: pointer;
+    text-decoration: none;
+    }
+
+    .navbar nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 0.7rem;
+    }
+
+    .nav-link,
+    .cart-link,
+    .logout-link {
+    padding: 0.5rem 1.3rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.15s ease-in-out;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    }
+
+    .nav-link,
+    .cart-link {
+    color: #ff8ba7;
+    background-color: white;
+    }
+
+    .nav-link:hover,
+    .cart-link:hover {
+    background-color: #ffd3dc;
+    }
+
+    .nav-link.active,
+    .cart-link.active {
+    background-color: #ff8ba7;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-link {
+    position: relative;
+    }
+
+    .cart-count-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: white;
+    transform: translate(50%, -50%);
+    background-color: #ff8ba7;
+    border-radius: 9999px;
+    }
+
+    .logout-link {
+    background-color: #ff8ba7;
+    color: white;
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 6px rgba(255, 139, 167, 0.3);
+    }
+
+    .logout-link:hover {
+    background-color: #ff7494;
+    box-shadow: 0 4px 8px rgba(255, 116, 148, 0.4);
+    }
+

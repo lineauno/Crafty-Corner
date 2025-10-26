@@ -1,0 +1,220 @@
+/* 🌸 Cart.css — matches your soft pink & pastel design */
+
+/* Page Layout */
+.cart-container {
+    text-align: center;
+    background-color: #f6edea;
+    padding: 60px 40px;
+    min-height: 80vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.cart-container h2 {
+    font-size: 2rem;
+    color: #ff8aa0;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.cart-container p {
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+/* Table */
+.cart-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cart-table thead {
+    background-color: #ffc4d0;
+    color: #ff5c84;
+    text-align: left;
+}
+
+.cart-table th,
+.cart-table td {
+    padding: 16px 12px;
+    text-align: center;
+}
+
+.cart-table td.item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+/* Cart Container Box */
+.cart-items-box {
+    background-color: #ffffff;
+    border-radius: 0.75rem;     
+    box-shadow: 0 8px 12px -3px rgba(0,0,0,0.08), 0 3px 6px -2px rgba(0,0,0,0.04); 
+    padding: 1.5rem;           /* smaller padding */
+    margin-bottom: 1.5rem;     /* smaller margin */
+}
+
+/* Quantity Buttons */
+.quantity button {
+    background-color: #f3f5fc;
+    border: none;
+    border-radius: 50%;
+    width: 24px;               /* smaller buttons */
+    height: 24px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.quantity button:hover {
+    background-color: #e6e8f2;
+}
+
+.quantity span {
+    margin: 0 8px;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Remove Button */
+.remove {
+    color: #ff6f91;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.remove:hover {
+    color: #ff3b5f;
+}
+
+/* Totals Section */
+.total-section {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c3e5c3;
+    padding: 10px 30px;       /* smaller padding */
+    border-radius: 20px;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.total-section strong {
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+/* Buttons Below */
+.cart-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-light,
+.btn-green {
+    text-decoration: none;
+    font-size: 0.95rem;       /* smaller buttons */
+    font-weight: 500;
+    padding: 10px 24px;       /* smaller padding */
+    border-radius: 25px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-light {
+    background-color: #eef2fc;
+    color: #555;
+}
+
+.btn-light:hover {
+    background-color: #dfe5f8;
+}
+
+.btn-green {
+    background-color: #a2d5a2;
+    color: white;
+}
+
+.btn-green:hover {
+    background-color: #8fc98f;
+}
+
+/* Empty Cart */
+/* Empty Cart */
+.cart-empty {
+    text-align: center;
+    padding: 60px 20px;
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff; /* white container for separation */
+    border-radius: 1rem;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.08);
+    max-width: 500px;
+    margin: 3rem auto;
+}
+
+.cart-empty h2 {
+    color: #ff7892;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.cart-empty p {
+    color: #555;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.cart-empty .btn {
+    background-color: #ffa3b4;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.cart-empty .btn:hover {
+    background-color: #ff8a9d;
+    transform: scale(1.05);
+}
+
+
+/* Product Image beside Name */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* smaller gap */
+    justify-content: flex-start;
+}
+
+.item-image {
+    width: 40px;  /* smaller image */
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffc4d0;
+    background-color: #fff;
+}
+
+.item-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
